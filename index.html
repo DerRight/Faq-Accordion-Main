@@ -101,6 +101,15 @@
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         color: #2f1533;
       }
+
+      .faq-item {
+        transition: background-color 0.3s ease;
+      }
+      .faq-item.active {
+        background-color: #f0e4ff;
+        color: #3c005d;
+      }
+
       .title {
         display: flex;
         flex-direction: row;
@@ -117,6 +126,7 @@
           padding: 0 2.188rem;
         }
       }
+
       .question1 {
         cursor: pointer;
         display: flex;
@@ -172,9 +182,23 @@
           font-size: 20px;
         }
       }
+
       .answer {
         display: none;
+        margin-top: 0.5rem;
+        color: #6b6b6b;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+        max-height: 0;
       }
+      .faq-item.active .answer {
+        display: block;
+        max-height: 300px;
+      }
+      .icon img {
+        transform: rotate(180deg);
+      }
+
       .icon {
         cursor: pointer;
       }
@@ -200,7 +224,7 @@
           <h1 class="faqs">FAQs</h1>
         </section>
 
-        <section class="question1">
+        <section class="question1 faq-item">
           <h2 class="qa1">What is Frontend Mentor, and how will it help me?</h2>
           <figure class="icon">
             <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
@@ -214,7 +238,7 @@
           </p>
         </section>
 
-        <section class="question2">
+        <section class="question2 faq-item">
           <h2 class="qa2">Is Frontend Mentor free?</h2>
           <figure class="icon">
             <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
@@ -227,7 +251,7 @@
           </p>
         </section>
 
-        <section class="question3">
+        <section class="question3 faq-item">
           <h2 class="qa3">
             Can I use Frontend Mentor projects in my portfolio?
           </h2>
@@ -242,7 +266,7 @@
           </p>
         </section>
 
-        <section class="question4">
+        <section class="question4 faq-item">
           <h2 class="qa4">How can I get help if I'm stuck on a challenge?</h2>
           <figure class="icon">
             <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
@@ -265,12 +289,13 @@
     </footer>`
 
     <script>
-      document.querySelectorAll('.question1, .question2, .question3, question4').forEach(item => {
+      document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
+          item.classList.toggle('active');
           const answer = item.querySelector('.answer');
           const icon = item.querySelector('.icon img');
 
-          if (answer.style.display === 'none' || answer.display === '') {
+          if (answer.classList.contains('active')) {
             answer.style.display = 'block';
             icon.src = './assets/images/icon-minus.svg';
           }
