@@ -121,74 +121,81 @@
 
       .question1 {
         cursor: pointer;
-        display: flex;
         margin: 20px 0;
-        align-items: center;
-        justify-content: space-between;
 
         .qa1 {
           font-weight: 650;
           font-size: 20px;
         }
 
-        .icon {
-          justify-content: flex-end;
+        .qa1:hover {
+          color: #8c6991;
         }
       }
 
       .question2 {
         cursor: pointer;
-        display: flex;
         margin: 20px 0;
-        align-items: center;
-        justify-content: space-between;
 
         .qa2 {
           font-weight: 650;
           font-size: 20px;
         }
+
+        .qa2:hover {
+          color: #8c6991;
+        }
       }
 
       .question3 {
         cursor: pointer;
-        display: flex;
         margin: 20px 0;
-        align-items: center;
-        justify-content: space-between;
 
         .qa3 {
           font-weight: 650;
           font-size: 20px;
         }
+
+        .qa3:hover {
+          color: #8c6991;
+        }
       }
 
       .question4 {
         cursor: pointer;
-        display: flex;
         margin: 20px 0 0;
-        align-items: center;
-        justify-content: space-between;
 
         .qa4 {
           font-weight: 650;
           font-size: 20px;
         }
-      }
 
+        .qa4:hover {
+          color: #8c6991;
+        }
+      }
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
       .answer {
         display: none;
-        margin-top: 10px;
+        margin-top: 20px;
         font-size: 16px;
       }
       .faq-item.active .answer {
         display: block;
       }
-      .faq-item.active .icon img {
+      .faq-item.active .icon {
         content: url("./assets/images/icon-minus.svg");
       }
-
       .icon {
         cursor: pointer;
+      }
+      .faq-item.active {
+        display: flex;
+        flex-direction: column;
       }
 
       .attribution {
@@ -213,11 +220,13 @@
         </section>
 
         <section class="question1 faq-item">
-          <h2 class="qa1">What is Frontend Mentor, and how will it help me?</h2>
-          <figure class="icon">
-            <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
-            <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
-          </figure>
+          <section class="question">
+            <h2 class="qa1">What is Frontend Mentor, and how will it help me?</h2>
+            <figure class="icon">
+              <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
+              <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
+            </figure>
+          </section>
           <p class="answer">
             Frontend Mentor offers realistic coding challenges to help
             developers improve their frontend coding skills with projects in
@@ -227,11 +236,13 @@
         </section>
 
         <section class="question2 faq-item">
-          <h2 class="qa2">Is Frontend Mentor free?</h2>
-          <figure class="icon">
-            <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
-            <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
-          </figure>
+          <section class="question">
+            <h2 class="qa2">Is Frontend Mentor free?</h2>
+            <figure class="icon">
+              <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
+              <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
+            </figure>
+          </section>
           <p class="answer">
             Yes, Frontend Mentor offers both free and premium coding challenges,
             with the free option providing access to a range of projects
@@ -240,13 +251,13 @@
         </section>
 
         <section class="question3 faq-item">
-          <h2 class="qa3">
-            Can I use Frontend Mentor projects in my portfolio?
-          </h2>
-          <figure class="icon">
-            <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
-            <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
-          </figure>
+          <section class="question">
+            <h2 class="qa3">Can I use Frontend Mentor projects in my portfolio?</h2>
+            <figure class="icon">
+              <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
+              <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
+            </figure>
+          </section>
           <p class="answer">
             Yes, you can use projects completed on Frontend Mentor in your
             portfolio. It's an excellent way to showcase your skills to
@@ -255,11 +266,13 @@
         </section>
 
         <section class="question4 faq-item">
-          <h2 class="qa4">How can I get help if I'm stuck on a challenge?</h2>
-          <figure class="icon">
-            <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
-            <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
-          </figure>
+          <section class="question">
+            <h2 class="qa4">How can I get help if I'm stuck on a challenge?</h2>
+            <figure class="icon">
+              <!-- <img src="./assets/images/icon-minus.svg" alt="伸縮icon" /> -->
+              <img src="./assets/images/icon-plus.svg" alt="伸縮icon" />
+            </figure>
+          </section>
           <p class="answer">
             The best place to get help is inside Frontend Mentor's Discord
             community. There's a help channel where you can ask questions and
