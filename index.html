@@ -102,14 +102,6 @@
         color: #2f1533;
       }
 
-      .faq-item {
-        transition: background-color 0.3s ease;
-      }
-      .faq-item.active {
-        background-color: #f0e4ff;
-        color: #3c005d;
-      }
-
       .title {
         display: flex;
         flex-direction: row;
@@ -185,18 +177,14 @@
 
       .answer {
         display: none;
-        margin-top: 0.5rem;
-        color: #6b6b6b;
-        transition: max-height 0.3s ease;
-        overflow: hidden;
-        max-height: 0;
+        margin-top: 10px;
+        font-size: 16px;
       }
       .faq-item.active .answer {
         display: block;
-        max-height: 300px;
       }
-      .icon img {
-        transform: rotate(180deg);
+      .faq-item.active .icon img {
+        content: url("./assets/images/icon-minus.svg");
       }
 
       .icon {
@@ -286,23 +274,13 @@
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">WeiHu</a>.
-    </footer>`
+    </footer>
+    `
 
     <script>
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-          item.classList.toggle('active');
-          const answer = item.querySelector('.answer');
-          const icon = item.querySelector('.icon img');
-
-          if (answer.classList.contains('active')) {
-            answer.style.display = 'block';
-            icon.src = './assets/images/icon-minus.svg';
-          }
-          else {
-            answer.style.display = 'none';
-            icon.src = './assets/images/icon-plus.svg';
-          }
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
         });
       });
     </script>
